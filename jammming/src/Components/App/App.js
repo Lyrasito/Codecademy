@@ -5,6 +5,7 @@ import SearchResults from "../SearchResults/SearchResults";
 import Playlist from "../Playlist/Playlist";
 import Spotify from "../../util/Spotify";
 import PlaylistList from "../PlaylistList/PlaylistList";
+import PreviewTrack from "../PreviewTrack/PreviewTrack";
 
 Spotify.getAccessToken();
 
@@ -18,6 +19,7 @@ class App extends React.Component {
       playlistTracks: [],
       playlists: [],
       playlistId: null,
+      preview: ''
     };
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
@@ -85,6 +87,7 @@ class App extends React.Component {
       });
     });
   }
+
 
   render() {
     return (

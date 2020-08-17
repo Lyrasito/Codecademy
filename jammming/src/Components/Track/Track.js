@@ -7,6 +7,7 @@ class Track extends React.Component {
 
         this.addTrack = this.addTrack.bind(this);
         this.removeTrack = this.removeTrack.bind(this);
+        this.previewTrack = this.previewTrack.bind(this);
     }
     
     renderAction () {
@@ -22,14 +23,29 @@ class Track extends React.Component {
     removeTrack () {
         this.props.onRemove(this.props.track)
     }
+    previewTrack() {
+        if (!this.props.preview) {
+            return;
+        } else {
+            return <audio controls src={this.props.preview} type="audio/ogg" >
+            This format is not supported
+           </audio>;
+        }
+    }
     render () {
-        return (
+        return ( <div className="Outer-track">
             <div className="Track">
                 <div className="Track-information">
                     <h3>{this.props.track.name}</h3>
                     <p>{this.props.track.artist} |  {this.props.track.album} </p>
+                    
                 </div>
                 {this.renderAction()}
+                
+            </div>
+            <div className="previewTrack">
+                    {this.previewTrack()}
+                </div>
             </div>
         )
     }
