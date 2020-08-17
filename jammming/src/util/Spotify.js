@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 let accessToken;
 let userID;
-const clientID = "41072e0bd41e4b698ea6f1b44b5bb427";
+const clientID = "client-id";
 const redirectURI = "http://localhost:3000/";
 
 const Spotify = {
